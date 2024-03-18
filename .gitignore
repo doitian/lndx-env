@@ -1,0 +1,5 @@
+/bitcoind/regtest
+/*/data
+/*/logs
+*.cert
+*.key
