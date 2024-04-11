@@ -6,7 +6,7 @@
     {
       "label": "start",
       "dependsOrder": "parallel",
-      "dependsOn": ["bitcoind", "ingrid", "bob", "charlie"],
+      "dependsOn": ["bitcoind", "ingrid", "bob"],
       "problemMatcher": []
     },
     {
