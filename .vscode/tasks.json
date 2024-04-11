@@ -1,0 +1,53 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start",
+      "dependsOrder": "parallel",
+      "dependsOn": ["bitcoind", "ingrid", "bob", "charlie"],
+      "problemMatcher": []
+    },
+    {
+      "label": "bitcoind",
+      "type": "shell",
+      "command": "bitcoind -conf='${workspaceFolder}/bitcoind/bitcoin.conf' -datadir='${workspaceFolder}/bitcoind'",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "ingrid",
+      "type": "shell",
+      "command": "lnd --lnddir='${workspaceFolder}/ingrid' --wallet-unlock-password-file='${workspaceFolder}/password-dev.txt'",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "bob",
+      "type": "shell",
+      "command": "lnd --lnddir='${workspaceFolder}/bob' --wallet-unlock-password-file='${workspaceFolder}/password-dev.txt'",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    },
+    {
+      "label": "charlie",
+      "type": "shell",
+      "command": "lnd --lnddir='${workspaceFolder}/charlie' --wallet-unlock-password-file='${workspaceFolder}/password-dev.txt'",
+      "problemMatcher": [],
+      "presentation": {
+        "panel": "dedicated"
+      },
+      "isBackground": true
+    }
+  ]
+}
