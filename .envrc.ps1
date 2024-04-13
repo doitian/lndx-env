@@ -16,7 +16,7 @@ function global:ilncli {
 
 function global:down {
   $env:PATH = $script:rememberPath
-  Remove-Item -Function bitcoin-cli
-  Remove-Item -Function blncli
-  Remove-Item -Function ilncli
+  Remove-Item Function:bitcoin-cli
+  Remove-Item Function:blncli
+  Remove-Item Function:ilncli
 }
